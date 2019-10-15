@@ -326,3 +326,19 @@ GRANT pg_read_all_settings TO cistats
 GRANT pg_monitor to cistats
 GRANT TEMPORARY on DATABASE postgres TO cistats
 ```
+
+# Testing
+
+Integration tests have been provided, which are runnable with [pytest](https://pytest.org). The integration tests use
+docker to provide fixture databases.
+
+Because the images need to be pulled, you will find that the first run of pytest will be quite slow.
+
+Install test dependencies, grab dependencies from `requirements-dev.txt` like so:
+
+    $ pip install -r requirements-dev.txt
+
+And then you may run `pytest` from the root of the repository:
+
+    $ pytest
+
